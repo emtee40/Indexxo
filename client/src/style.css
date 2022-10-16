@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .main-gradient {
+    @apply bg-no-repeat bg-fixed bg-center bg-gradient-to-br from-agradient to-bgradient
+  }
+}

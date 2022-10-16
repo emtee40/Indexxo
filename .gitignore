@@ -4,7 +4,6 @@
 .idea
 .vscode
 .venv
-client
 build
 /server/bin/
 /server/lib/
@@ -15,3 +14,6 @@ build
 *.sqlite
 server/lib64
 server/pyvenv.cfg
+
+node_modules
+dist
