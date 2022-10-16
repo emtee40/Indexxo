@@ -5,3 +5,13 @@
 .vscode
 .venv
 client
+build
+/server/bin/
+/server/lib/
+/indexxo-playground/
+*.pyc
+/*/__pycache__/
+/*/include/
+*.sqlite
+server/lib64
+server/pyvenv.cfg
