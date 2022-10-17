@@ -59,6 +59,19 @@ If you have installed Indexxo via Python, you can change config.json file to mod
 	```
 	indexxo --config config.json
 	```
+5. Finally call Indexxo to run indexer and server
+	```
+	indexxo --run
+	```
+6. In terminal look for line that tells where the server is running.
+	```
+	...
+	 * Running on http://localhost:5000
+	...
+	```
+7. Open your browser and follow this url.
+
+Everything is done. Just don't close terminal unless you want to stop Indexxo.
 
 ### Editing config.json
 0. Enter folders to index. Prefer using full paths. See [How to get full paths](#How-to-get-full-paths).

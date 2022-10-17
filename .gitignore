@@ -16,4 +16,3 @@ server/lib64
 server/pyvenv.cfg
 
 node_modules
-dist

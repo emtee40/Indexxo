@@ -25,7 +25,7 @@ function closeMenu() {
         <div class="p-3">
             <div class="flex">
                 <p class="text-xl text-white font-bold flex-auto">{{titleText}}</p>
-                <img src="/src/assets/icon_menu.svg" alt="menu" @click="openMenu">
+                <img src="/assets/icon_menu.svg" alt="menu" @click="openMenu">
             </div>
             <p class="text-lg text-white">{{supportText}}</p>
         </div>

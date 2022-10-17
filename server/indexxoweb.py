@@ -1,7 +1,7 @@
 import logging
 from pathlib import Path
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 
 from server.indexxocore import Indexxo
@@ -15,20 +15,25 @@ class IndexxoServer:
         self.app = Flask(__name__)
         CORS(self.app)
         self.indexxo = indexxo
-        self.app.add_url_rule("/", "index", self.index)
-        self.app.add_url_rule("/folder", "folder", self.get_folder_info)
-        self.app.add_url_rule("/search", "search", self.search_files)
+        # Frontend
+        self.app.add_url_rule("/", "web", self.indexxo_web)
+        # Anything will lead back to index.html (for Vue Router)
+        self.app.add_url_rule("/<anything>", "web", self.indexxo_web)
+        self.app.add_url_rule("/assets/<file>", "file", self.serve_file)
+
+        # Backend
+        self.app.add_url_rule("/api/folder", "folder", self.get_folder_info)
+        self.app.add_url_rule("/api/search", "search", self.search_files)
 
     def run_server(self):
         """TODO"""
         self.app.run(host="localhost", debug=False)
 
-    @staticmethod
-    def index():
-        """
-        Page that can be used for pinging.
-        """
-        return "<p>Welcome to Indexxo!</p>"
+    def indexxo_web(self):
+        return send_from_directory('../client/dist', 'index.html')
+    
+    def serve_file(self, file):
+        return send_from_directory('../client/dist/assets', file)
 
     def get_folder_info(self):
         """

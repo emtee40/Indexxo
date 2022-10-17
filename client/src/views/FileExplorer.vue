@@ -19,7 +19,7 @@ const path = computed(() => {
 })
 
 function loadContent(path: string = "") {
-    fetch('http://127.0.0.1:5000/folder?path=' + path)
+    fetch('http://127.0.0.1:5000/api/folder?path=' + path)
         .then((response) => response.json())
         .then((data) => {
             supportText.value = "Loading..."
@@ -65,14 +65,14 @@ loadContent(path.value)
         <MainHeader title-text="File Explorer" :support-text="supportText" class=""></MainHeader>
         <div class="flex flex-grow flex-col bg-bottom bg-white pt-4 pb-16 rounded-t-3xl">
             <div v-if="parentFileObject" @click="clickGoBack()">
-                <FileExplorerListItemGeneric img-src="./src/assets/back.svg" img-alt="Go up" title=".." />
+                <FileExplorerListItemGeneric img-src="/assets/back.svg" img-alt="Go up" title=".." />
             </div>
             <div v-else-if="showSpacesButton" @click="clickGoSpaces">
-                <FileExplorerListItemGeneric img-src="./src/assets/back.svg" img-alt="Go to My Spaces"
+                <FileExplorerListItemGeneric img-src="/assets/back.svg" img-alt="Go to My Spaces"
                     title="Go back to My Spaces" />
             </div>
             <div v-if="emptyFolder" class="m-auto grid place-items-center gap-8">
-                <img class="object-contain h-48" src="/src/assets/undraw_void.svg" alt="menu">
+                <img class="object-contain h-48" src="/assets/undraw_void.svg" alt="menu">
                 <div class="text-sm">It's empty in here...</div>
             </div>
             <div v-else v-for="item in folderContent" :key="item.full_path" @click="clickListItem(item)">

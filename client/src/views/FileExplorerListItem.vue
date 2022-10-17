@@ -10,16 +10,16 @@ const props = defineProps<{
 
 const imgSrc = (() => {
   switch (props.fileobj.type) {
-    case "archive": return "/src/assets/archive.svg";
-    case "audio": return "/src/assets/audio.svg";
-    case "document": return "/src/assets/document.svg";
-    case "folder": return "/src/assets/folder.svg";
-    case "image": return "/src/assets/image.svg";
-    case "program": return "/src/assets/program.svg";
-    case "space": return "/src/assets/space.svg";
-    case "video": return "/src/assets/video.svg";
+    case "archive": return "/assets/archive.svg";
+    case "audio": return "/assets/audio.svg";
+    case "document": return "/assets/document.svg";
+    case "folder": return "/assets/folder.svg";
+    case "image": return "/assets/image.svg";
+    case "program": return "/assets/program.svg";
+    case "space": return "/assets/space.svg";
+    case "video": return "/assets/video.svg";
 
-    default: return "/src/assets/other.svg";
+    default: return "/assets/other.svg";
   }
 })();
 
