@@ -1,3 +1,5 @@
+# Note: Project is not dead, I'm just busy with other projects.
+
 ![Indexxo](./content/indexxo.png)
 Welcome to repository of a project called **Indexxo**! Below you can read some information about the app. 
 
